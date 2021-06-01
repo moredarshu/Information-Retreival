@@ -1,0 +1,17 @@
+<html>
+    <head><title>Information Retreival</title></head>
+    <body>
+        <form action = "{{url_for('predict')}}" method="POST">
+            <input type="text" name="information" placeholder="Input Text Here" required="required"/>
+            <button type="submit">Click Me</button>
+        </form>
+        <ol>
+            {% for i,val in idx %}
+            <li><label>Name : </label>{{DataFrame['Name'][val]}} <br>
+                <label>Link : </label> {{DataFrame['URI'][val]}}
+            </li>
+            {%endfor%}
+        </ol>
+    </body>
+
+</html>
